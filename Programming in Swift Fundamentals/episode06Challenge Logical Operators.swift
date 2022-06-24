@@ -32,3 +32,10 @@ teenagerName to "Not me!" if the value is outside that range.
 
 Then print out the value of teenagerName.
 */
+
+//My solution
+// let teenagerName: String = "Dowon"
+// myAge >= 13 && myAge <= 19 ? print(teenagerName) : print("Not me!")
+
+let teenagerName = myAge >= 13 && myAge <= 19 ? "Dowon" : "Not me!"
+print(teenagerName)
