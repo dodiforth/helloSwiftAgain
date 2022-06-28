@@ -10,6 +10,9 @@ to nil if hasAllergies is true, and to "Mango" otherwise.
 
 */
 
+let hasAllergies: Bool = true
+var dogName:String? =  hasAllergies ? nil : "Mango"
+print(dogName)
 
 /*
 Challenge 2
@@ -23,6 +26,9 @@ Why is paresedInt an optional here?
 
 */
 
+let parsedInt = Int("10")
+
+
 /*
 Challenge 3
 
@@ -32,3 +38,5 @@ What will the value of `newParsedInt be? Why?
 
 
 */
+
+let newParsedInt = Int("cat")
