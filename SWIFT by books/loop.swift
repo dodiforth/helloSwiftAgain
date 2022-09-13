@@ -34,6 +34,14 @@ for _ in 1...3 {
 
 print("10의 3제곱은 \(result)입니다.")
 
+var randomInts: [Int] = []
+
+for _ in 0..<25 {
+	let randomInt = Int.random(in:1...100)
+	randomInts.append(randomInt)
+}
+print(randomInts)
+
 /*
 for-in 구문은 스위프트의 기본 컬렉션 타입에서도 유용하게 사용할 수 있습니다. 딕셔너리는 넘겨받는 값의 타입이 튜플로 지정되어 넘어옵니다.
 */
