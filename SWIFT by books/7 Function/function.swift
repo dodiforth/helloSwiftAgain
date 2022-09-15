@@ -66,3 +66,45 @@ func sayHello2(from myName:String, to name:String) -> String {
 	return "Hello \(name) ~ I'm \(myName)"
 }
 print(sayHello2(from: "yagom", to: "Jenny")) //Hello Jenny ~ I'm yagom
+
+//전달인자 레이블을 사용하고 싶지 않다면 와일드카드 식별자를 사용하세요.
+//전달인자 레이블이 없는 함수 정의와 사용
+func sayHello3(_ name: String, _ times: Int) -> String {
+	var result: String = ""
+	
+	for _ in 0..<times {
+		result += "Hello\(name)!"+" "
+	}
+	
+	return result
+}
+
+print(sayHello3("Chope",2)) //HelloChope! HelloChope!
+
+//전달인자 레이블 변경을 통한 함수 중복 정의 -> 전달인자 레이블을 변경하면 함수의 이름 자체가 변경됩니다.
+//그렇기 때문에 전달인자 레이블만 다르게 써주더라도 함수 중복 정의(오버로드)로 동작할 수 있습니다.
+
+func sayHello4(to name: String, _ times: Int) -> String {
+	var result: String = ""
+	
+	for _ in 0..<times {
+		result += "Hello\(name)!"+" "
+	}
+	
+	return result
+}
+
+func sayHello4(to name: String, repeatCount times: Int) -> String {
+	var result: String = ""
+	
+	for _ in 0..<times {
+		result += "Hello \(name)!"+" "
+	}
+	
+	return result
+}
+
+print(sayHello4(to: "Simon", 3))
+print(sayHello4(to: "Simon", repeatCount: 3))
+
+/**/
