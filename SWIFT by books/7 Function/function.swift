@@ -1,3 +1,7 @@
+/*
+모든 설명과 코드의 저작권은 : "스위프트 프로그래밍 3판 SWIFT5 (출판사 한빛미디어)"의 지은이 야곰에게 있습니다.
+*/
+
 import Foundation
 
 /*
@@ -107,4 +111,33 @@ func sayHello4(to name: String, repeatCount times: Int) -> String {
 print(sayHello4(to: "Simon", 3))
 print(sayHello4(to: "Simon", repeatCount: 3))
 
-/**/
+/*
+매개변수 기본값
+스위프트의 함수에서는 매개변수마다 기본값을 지정할 수 있습니다.
+즉, 매개변수가 전달되지 않으면 기본값을 사용합니다. 매개변수 기본값이 있는 함수는 함수를 중복 정의한 것처럼 사용할 수 있습니다.
+예) 아래 코드
+*/
+//매개변수가 기본값 3을 갖습니다.
+
+func sayHello5(_ name: String, times: Int = 3) -> String {
+	var result: String = ""
+	
+	for _ in 0..<times {
+		result += "Hello \(name)!"+" "
+	}
+	
+	return result
+}
+
+//times 매개변수의 전달 값을 넘겨주지 않아 기본값 3을 반영해서 세 번 출력합니다.
+print(sayHello5("Hana")) //Hello Hana! Hello Hana! Hello Hana!
+
+//times 매개변수의 전달 값을 2로 넘겨주었기 때문에 전달 값을 반영해서 두 번 출력합니다.
+print(sayHello5("Joe", times:2)) // Hello Joe! Hello Joe!
+
+
+/*
+가변 매개변수와 입출력 매개변수
+매개변수로 몇 개의 값이 들어올지 모를때, 가변 매개변수를 사용할 수 있습니다. 
+가변 매개변수는 0
+*/
