@@ -139,5 +139,54 @@ print(sayHello5("Joe", times:2)) // Hello Joe! Hello Joe!
 /*
 가변 매개변수와 입출력 매개변수
 매개변수로 몇 개의 값이 들어올지 모를때, 가변 매개변수를 사용할 수 있습니다. 
-가변 매개변수는 0
+가변 매개변수는 0개 이상(0개 포함)의 값을 받아올 수 있으며, 가변 매개변수로 들어온 인자 값은 배열처럼 사용할 수 있습니다.
+함수마다 가변 매개변수는 하나만 가질 수 있습니다.
+*/
+
+//가변 매개변수를 가지는 함수의 정의와 사용 
+
+func sayHelloToFriends(me: String, friends names: String...) -> String {
+	var result: String = ""
+	
+	for friend in names {
+		result += "Hello \(friend)!" + " "
+	}
+	
+	result += "I'm " + me + "!"
+	return result 
+}
+
+print(sayHelloToFriends(me: "yagom", friends: "Johansson", "Jay", "Wizplan"))
+// Hello Johansson! Hello Jay! Hello Wizplan! I'm yagom!
+
+print(sayHelloToFriends(me: "yagom"))
+// I'm yagom!
+
+/*
+In Swift, inout parameters allow you to change an input passed into a function 
+*/
+//inout 매개변수의 활용
+
+var numbers: [Int] = [1,2,3]
+
+func nonReferenceParameter(_ arr: [Int]) {
+	var copiedArr: [Int] = arr
+	copiedArr[1] = 1
+}
+
+func referenceParameter(_ arr: inout[Int]) {
+	arr[1] = 1
+}
+
+nonReferenceParameter(numbers)
+print(numbers[1]) //2
+
+referenceParameter(&numbers) //참조를 표현하기 위해 &를 붙여줍니다.
+print(numbers[1]) //1
+
+/*
+입출력 매개변수는 매개변수 기본값을 가질 수 없으며, 가변 매개변수로 사용될 수 없습니다.
+또한 상수는 변경될 수 없으므로 입출력 매개변수의 전달인자로 사용될 수 없습니다.
+
+입출력 매개변수는 잘 사용하면 문제 없지만 잘못 사용하면 메모리 안전 memory safety을 위협하기도 합니다. 
 */
