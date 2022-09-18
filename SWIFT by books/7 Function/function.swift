@@ -190,3 +190,26 @@ print(numbers[1]) //1
 
 입출력 매개변수는 잘 사용하면 문제 없지만 잘못 사용하면 메모리 안전 memory safety을 위협하기도 합니다. 
 */
+
+/*
+반환이 없는 함수
+함수는 특정 연산을 실행한 후 결과값을 반환합니다. 그러나 값의 반환이 굳이 필요하지 않은 함수도 있습니다.
+그럴 때는 반환 값이 없는 함수를 만들어 줄 수 있습니다.
+만약 반환 값이 없는 함수라면 반환 타입을 '없음'을 의미하는 Void로 표기하거나 아예 반환타입 표현을 생략하셔도 되니다.
+즉, 반환 타입이 Void 이거나 생략되어 있다면 반환 값이 없는 함수입니다.
+*/
+//반환 값이 없는 함수의 정의와 사용
+func sayHelloWorld(){
+	print("Hello, World!")
+}
+sayHelloWorld() // Hello, world!
+
+func sayHello6(from myName: String, to name: String){
+	print("Hello \(name)! I'm \(myName)")
+}
+sayHello6(from: "yagom", to: "Mijeong") //Hello Mijeong! I'm yagom
+
+func sayGoodbye() -> Void { //Void를 명시해주어도 상관없습니다.
+	print("Good bye")
+}
+sayGoodbye() //Good bye
