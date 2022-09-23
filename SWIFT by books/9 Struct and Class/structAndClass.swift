@@ -24,3 +24,12 @@ struct BasicInformation {
 var yagomInfo: BasicInformation = BasicInformation(name:"yagom", age: 99)
 
 print(yagomInfo)
+yagomInfo.age = 100
+
+//yagomInfo의 값을 복사하여 할당합니다!
+var friendInfo: BasicInformation = yagomInfo
+
+print(friendInfo)
+
+print("yagom's age:  \(yagomInfo.age)") //100
+print("friend's age: \(friendInfo.age)") //100
