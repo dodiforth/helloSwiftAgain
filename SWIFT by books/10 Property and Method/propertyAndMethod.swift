@@ -69,3 +69,4 @@ let yagomPosition: Position = Position(name: "yagom", currentPoint: yagomPoint)
 이 질문의 답이 지연 저장 프로퍼티 사용입니다.
 지연 저장 프로퍼티를 잘 사용하면 불필요한 성능저하나 공간 낭비를 줄일 수 있습니다.
 */
+
